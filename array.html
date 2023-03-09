@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Nối tất cả các phần tử trong một mảng chuỗi lại với nhau
+        document.write("1. Join all elements of an array into a string")
+        myColor = ["Red", "Green", "White", "Black"];
+        document.write("<br><br>" + myColor.toString());
+        console.log(myColor.join());
+        console.log(myColor.join('+'));
+        document.write("<br><br>");
+
+        // Write a simple JavaScript program to join all elements of the following array into a string.
+        //     Expected Output:
+        // "Red,Green,White,Black"
+        // "Red,Green,White,Black"
+        // "Red+Green+White+Black"
+
+        document.write("2. Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2 số chẵn." +
+            "<br> Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.")
+        let num = +prompt("Nhập sô bất kì để thêm gạch ngang giữa 2 số chẵn");
+        const str = num.toString();
+        const result = [str[0]];
+
+        for (let x = 1; x < str.length; x++) {
+            if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+                result.push('-', str[x]);
+            }
+            else {
+                result.push(str[x]);
+            }
+        }
+        document.write("<br><br>");
+        document.write(result.join(''));
+        document.write("<br><br>");
+
+    </script>
+</body>
+
+</html>

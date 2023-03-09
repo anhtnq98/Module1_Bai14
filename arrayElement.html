@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txtValue" />
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();" />
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();" />
+    <div id="result"></div>
+
+    <script>
+        let x = 0; //Tạo biến x và khởi tạo bằng 0, x là chỉ số truy cập tới các phần tử trong mảng.
+        let array = Array(); //Tạo mảng array để lưu các giá trị được nhập vào
+
+        /*
+        Xây dựng hàm add_element_to_array() để thêm mới một phần tử từ form
+        ● *1 - Lấy giá trị từ input-text và gán phần tử ở vị trí x trong mảng mỗi lần hàm
+        add_element_to_array() được gọi
+        ● *2 -Tăng giá trị x lên 1
+        ● *3 - Hiển thị phần tử vừa được thêm vào mảng
+        ● *4 - Gán giá trị rỗng cho input-text 
+        */
+
+        function add_element_to_array() {
+            array[x] = document.getElementById("txtValue").value; //*1
+            alert("Element: " + array[x] + " Added at index " + x); //*3
+            x++; //*2
+            // document.getElementById("txtValue ").value = ""; //*4    
+        }
+
+        /* 
+        Xây dựng hàm display_array() để hiển thị các phần tử trong mảng
+        ● Tạo biến e để lưu thẻ < hr > mỗi lần hiển thị một phần tử thẻ < hr > sử dụng để
+        phân cách các phần tử trong mảng: var e = "<hr/>"
+        ● Dùng vòng lặp for duyệt toàn bộ mảng: for (var i = 0; i < array.length; i++)
+        ● Mỗi lần duyệt lấy giá trị của các phần tử cộng dồn vào biến e.Thêm thẻ < br />
+        cuối mỗi lần duyệt.
+        ● Kết thúc lặp.Hiển thị biến e 
+        */
+
+        function display_array() {
+            let e = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>"; // lúc nào cũng phải += nếu ko sẽ bị viết đè
+            } document.getElementById("result").innerHTML = e;
+        }
+
+    </script>
+</body>
+
+</html>

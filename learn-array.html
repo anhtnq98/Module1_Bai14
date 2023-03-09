@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--     mảng array: bản chất mảng là một biến dùng để lưu trữ dữ liệu
+    1. cách khai báo 
+-->
+    <script>
+        let listStudents = ["Hoa", "Hồng", "Huệ"]; // mảng chứa mọi kiểu dữ liệu
+        console.log(listStudents);
+        // let newStudents = newArray("Hoa", "Hồng", "Huệ");
+        // console.log(newStudents);
+
+        // kiểm tra số phần tử trong mảng thì dùng thuộc tính length.
+        console.log(listStudents.length) //số phần tử trong listStudents
+
+        //cách lấy phần tử trong mảng
+        console.log(listStudents[length - 1]); // lấy Huệ ra, length-1 lấy phần tử cuối ra khỏi mảng
+
+        //kiểm tra kiểu dữ liệu của array
+        console.log(Array.isArray(listStudents)); //console.log(Array.isArray(name));
+        //kiểm tra ra true
+
+        //Các phương thức làm việc với mảng. CRUD với mảng
+        // C: Create 
+        //    method:
+        //    push: thêm phần tử vào vị trí cuối cùng của mảng
+        //    unshift: thêm phần tử vào vị trí đầu tiên của mảng
+        // R: Read
+        //    Có thể dùng vòng lặp để hiển thị
+        // U: Update
+        //     
+        // D: Delete
+        //    pop() : xóa phần tử đầu
+        //    shift() : xóa phần tử cuối
+
+        for (const key111 in listStudents) {
+            console.log(key111);
+        } // in là index nên in ra giá trị index 0 1 2
+
+        for (const value of listStudents) {
+            console.log(value);
+        } // in giá trị value như Hoa, Hồng , Huệ
+
+        //thay giá trị phần tử 2
+        listStudents[1] = "Hiền";
+        console.log(listStudents); // Thay Hồng thành Hiền
+
+        //tham trị :primitive, dùng cho kiểu nguyên thủy, có bộ nhớ riêng
+        let a = 6;
+        b = a;
+        a = 8;
+        console.log(b); // b sẽ không thay đổi theo a nếu không có vòng lặp
+
+        //tham chiếu, dùng cho kiểu phức tạp, dùng bộ nhớ chung
+        let array1 = [1, 2, 3];
+        array2 = array1;
+        array1[1] = 5;
+        console.log(array2); // array2 sẽ thay đổi theo array1
+
+        //lấy phần tử 3 chiều
+        list = [[0, 2], "Hoa", "Huệ"]
+        console.log(list[0][1]) // thì nó hiển thị 2
+
+        //sort(): sắp xếp các phần tử trong mảng
+        let listNumber = [2, 5, 8, 6]
+        listNumber.sort();
+        console.log(listStudents); // sắp xếp theo 2, 5, 6, 8
+
+        //splice(): truy cập trực tiếp mảng ban đầu: xóa thêm sửa
+        //slice: sao chép tạo mảng mới.
+        listNumber.splice(1, 2, "thêm");
+        // xóa 5 và 8 rồi chèn thêm vào trong mảng
+        // listNumber.splice(num1,num2,num3);
+        // num1 là vị trí, num2 là số phần tử muốn xóa, num3 là phần mình muốn chèn vào mảng tại vị 
+        // trí num2 vừa xóa
+
+        let listNumber2 = [1, 5, 8, 9, 3]
+        console.log(listNumber2.slice(1, 4));
+        // console.log(listNumber2.slice(start,end)); 
+        // trích xuất phần tử vị trí thứ 2[1] rồi in liên tục với số lượng phần tử trong khoảng 
+        // nhỏ hơn 4 (xóa 5,8,9). 
+        // start là vị trí trích xuất, end là là vị trí kết thúc, kết quả sẽ không bao gồm phần tử end.
+
+        let arr1 = [2, 5, 8]
+        let arr2 = [9, 8, 6]
+        // let newArray = arr1.concat(arr2); // gộp mảng arr1 với mảng arr2
+        let newArr = [...arr1,...arr2]; // speard
+        // console.log(newArray);
+        console.log(newArr);
+
+        //
+        let number = +prompt("Nhập số lượng phần tử trong mảng");
+        // for (let i = 0; i < number; i++) {
+        //     let a = +prompt(`phần tử thứ ${i+1}`);
+        //     arr.push(a);
+        // }
+        // console.log("a", arr);
+        let arr = number.split(",");
+        console.log(arr);
+        
+    </script>
+
+</body>
+
+</html>
