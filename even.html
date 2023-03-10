@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số chẵn</title>
+</head>
+
+<body>
+
+    <script>
+        // let text = "";
+        // list = [0, 1, 254, 6, 8];
+        // for (i = 0; i < list.length; i++) {
+        //     if (list[i] % 2 == 0 && list[i+1] % 2 == 0) {
+        //         text += list[i]+ "-"
+
+        //     } else {
+        //         text += list[i] + " "
+        //     }
+        // }
+        // document.write(text)
+
+        let num = prompt("Nhập số:");
+        let result = [];
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] % 2 == 0 && num[i + 1] % 2 == 0) {
+                result.push(num[i], "-");
+            } else {
+                result.push(num[i], " ");
+            }
+        }
+        document.write(result.join(""));
+
+        // const num = prompt();
+        // const result = [];
+        // for (let i = 1; i < num.length; i++) {
+        //     if (num[i - 1] % 2 === 0 && num[i] % 2 === 0) {
+        //         result.push("-", num[i]);
+        //     } else {
+        //         result.push(num[i]);
+        //     }
+        // }
+        // document.write(result.join(""));
+    </script>
+
+</body>
+
+</html>

@@ -17,23 +17,17 @@
 
 
         for (let i = 0; i < list.length; i++) {
-
             if (list[i] > max) {
-
                 max = list[i];
-
             }
         }
-
         for (let j = 0; j < list.length; j++) {
             if (list[j] == max) {
                 text += (j + 1) + " ";
                 count++
             }
         }
-
         document.write(`Có ${count} số lớn nhất là ${max} tại các vị trí là ${text}`);
-
     </script>
 </body>
 

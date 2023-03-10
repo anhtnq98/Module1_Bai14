@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập 10 số nguyên</title>
+</head>
+
+<body>
+    <script>
+        // alert("Nhập 10 số nguyên và hiển thị những số nguyên lớn hơn hoặc bằng 10")
+        // let num = prompt("Nhập 10 số");
+        // let str = num.split(" ");
+        // let arr = [];
+        // let count = 0;
+        // for (let i = 0; i <= str.length; i++) {
+        //     if(Number(str[i]) >= 10) {
+        //         arr.push(str[i]);
+        //         count++;
+        //     }
+        // } document.write(`Có ${count} số lớn hơn 10 và các số đó là ${arr}`)
+
+        alert("Nhập 10 số nguyên và hiển thị những số nguyên lớn hơn hoặc bằng 10")
+        let inputNum = prompt("Nhập 10 số nguyên và hiển thị");
+        let str = inputNum.split(" ");
+        let arr = [];
+        let count = 0;
+        for (let i = 0; i <= str.length; i++) {
+            if (Number(str[i]) >= 10 && Number(str[i]) % 1 === 0) {
+                arr.push(str[i]);
+                count++
+            }
+        }
+        document.write(`Có tất cả ${count} số lớn hơn hoặc bằng 10 là ${arr}`)
+    </script>
+</body>
+
+</html>
