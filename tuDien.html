@@ -14,13 +14,14 @@
     <h3 for="">Nhập một số bằng tiếng Anh mà bạn muốn phiên dịch (VD: red, yellow...)</h3>
     <input id="colorEng" type="text">
     <button onclick="seach()">Tìm kiếm</button>
-    <p id="result">Nghĩa tiếng Việt của ( ) là:</p>
+    <p id="result"></p>
 
     <script>
         // Tạo 2 mảng có độ dài bằng nhau để lưu trữ danh sách các từ. 
         // Mảng 1 lưu trữ các từ tiếng Anh, mảng 2 lưu trữ các từ tiếng Việt tương ứng.
-        let listEng = ["red", "yellow", "blue", "orange", "green", "violet", "brown", "black", "white", "gray"]; // 
+        let listEng = []; 
         let listViet = [];
+        let flag = true;
 
         // Khi tìm kiếm, tìm vị trí của từ tiếng Anh trong mảng 1. 
         // Nếu tìm thấy thì hiển thị từ tiếng Việt ở cùng vị trí trong mảng.
@@ -29,9 +30,20 @@
             for (i = 0; i < listEng.length; i++) {
                 if (inputColor === listEng[i]) {
                     document.getElementById("result").innerHTML = `Nghĩa tiếng Việt của ${inputColor} là : ${listViet[i]}`
-                    
+                    flag = true;
+                    break;
+                } else if (inputColor === listViet[i]) {
+                    document.getElementById("result").innerHTML = `Nghĩa tiếng Anh của ${inputColor} là : ${listEng[i]}`
+                    flag = true;
+                    break;
+                } else {
+                    flag = false;
                 }
             } 
+            if (flag == false) {
+                alert("Từ mà bạn muốn tìm kiếm hiện chưa được cập nhật. Mời nhập lại")
+            }
+            
         }
 
     </script>
