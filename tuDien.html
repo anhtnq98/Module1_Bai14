@@ -31,17 +31,18 @@
                 if (inputColor === listEng[i]) {
                     document.getElementById("result").innerHTML = `Nghĩa tiếng Việt của ${inputColor} là : ${listViet[i]}`
                     flag = true;
-                    break;
+                    return;
                 } else if (inputColor === listViet[i]) {
                     document.getElementById("result").innerHTML = `Nghĩa tiếng Anh của ${inputColor} là : ${listEng[i]}`
                     flag = true;
-                    break;
+                    return;
                 } else {
                     flag = false;
                 }
             } 
             if (flag == false) {
                 alert("Từ mà bạn muốn tìm kiếm hiện chưa được cập nhật. Mời nhập lại")
+                return;
             }
             
         }
